@@ -1,0 +1,33 @@
+<!--pages/cal/calculator.wxml-->
+<view class="bgc_ccc {{ mini? 'mini' : 'ctn'}}">
+  <!-- 固定的头部样式 -->
+  <view class="top">
+    <view class="head">
+      <view class="title">计算器</view>
+      <view class="tips"><view class="vh_m" id="narrow"></view></view>
+      <view class="tips"><view hidden="{{mini}}" class="expand"></view><view class="vh_m" id="expansion" bindtap="expand"></view></view>
+      <view class="tips"><view class="vh_m" id="close"></view></view>
+    </view>
+    <view class="utils">
+      <button size="mini">导航</button>
+      <text>标准</text>
+    </view>
+  </view>
+  <!-- 根据功能类型动态变换的main样式 -->
+  <view class="main">
+    <view class="ipt">
+        <input type="text" id="calculate" placeholder="计算" value="{{calLook}}"/>
+        <input type="text" id="look" placeholder="请输入值" value="{{result ? result : look}}"/>
+    </view>
+    <!-- <block wx:for="{{tipsList}}" wx:key="index"> -->
+      <view class="row" wx:for="{{tipsList}}" wx:for-index="idx" wx:key="idx">
+        <view data-sym="{{item[0].sym ? item[0].sym : ''}}" class="nor {{item[0].class}}" bindtap="{{item[0].type}}">{{item[0].value}}</view>
+        <view data-sym="{{item[1].sym ? item[1].sym : ''}}" class="nor {{item[1].class}}" bindtap="{{item[1].type}}">{{item[1].value}}</view>
+        <view data-sym="{{item[2].sym ? item[2].sym : ''}}" class="nor {{item[2].class}}" bindtap="{{item[2].type}}">{{item[2].value}}</view>
+        <view data-sym="{{item[3].sym ? item[3].sym : ''}}" class="nor {{item[3].class}}" bindtap="{{item[3].type}}">{{item[3].value}}</view>
+      </view>
+    <!-- </block> -->
+
+  </view>
+</view>
+
