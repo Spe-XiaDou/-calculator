@@ -1,8 +1,6 @@
 {
   "pages":[
-    "pages/cal/calculator",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/cal/calculator"
   ],
   "window":{
     "backgroundTextStyle":"light",
