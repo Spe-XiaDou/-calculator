@@ -9,10 +9,12 @@ Page({
   behaviors: [btnClick],
   data: {
     /* tipsList运算符列表
-     * tmpLook
      * look当前展示值
      * cal运算逻辑值
      * calLook运算逻辑展示值
+     * result要展示的结果值
+     * mini为true则启用迷你窗口模式
+     * mistake是否运算出错
      */
     tipsList : [
         /* value：显示的值 
@@ -100,9 +102,9 @@ Page({
       },
       {
         "0":{
-          "value": "",
-          "class": "num",
-          "type": "",
+          "value": "C",
+          "class": "",
+          "type": "clear",
           "sym": ""
         },
         "1":{
@@ -125,11 +127,12 @@ Page({
         },
       }
     ],
-    look: '',
-    cal: '',
-    calLook: '',
-    result: '',
-    mini: false
+    // look: '',
+    // cal: '',
+    // calLook: '',
+    // result: '',
+    // mini: false,
+    // mistake: false
   },
 
   /**

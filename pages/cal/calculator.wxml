@@ -6,7 +6,7 @@
       <view class="title">计算器</view>
       <view class="tips"><view class="vh_m" id="narrow"></view></view>
       <view class="tips"><view hidden="{{mini}}" class="expand"></view><view class="vh_m" id="expansion" bindtap="expand"></view></view>
-      <view class="tips"><view class="vh_m" id="close"></view></view>
+      <view class="tips"><view class="vh_m" id="close" bindtap="exitProgram"></view></view>
     </view>
     <view class="utils">
       <button size="mini">导航</button>
