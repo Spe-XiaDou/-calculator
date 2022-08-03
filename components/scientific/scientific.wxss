@@ -1,0 +1,54 @@
+/* components/scientific/scientific.wxss */
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* height: 500px; */
+}
+/* 输入框 */
+.ipt {
+  display: flex;
+  flex-direction: column;
+  flex: 1.2;
+}
+.row {
+  display: flex;
+  flex: 1;
+}
+.utils {
+  height: 50px;
+}
+
+
+.calculate {
+  display: inline-block;
+  box-sizing: border-box;
+  flex: 1;
+  padding-right: 12px;
+  border: 0;
+  text-align: right;
+}
+
+.look {
+  display: inline-block;
+  box-sizing: border-box;
+  flex: 2;
+  padding-right: 10px;
+  border: 0;
+  text-align: right;
+  font-size: 28px;
+}
+/* 按键样式 */
+.nor {
+  display: flex;
+  flex: 1;
+  margin: 0.1875rem;
+  background-color: #ddd;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.375rem;
+}
+.num {
+  /* height: 80px; */
+  background-color: #f3f3f3;
+}

@@ -1,0 +1,17 @@
+<!--components/scientific/scientific.wxml-->
+<view class="main">
+  <view class="ipt">
+      <input type="text" class="calculate" placeholder="计算" value="{{calLook}}"/>
+      <input type="text" class="look" placeholder="请输入值" value="{{result ? result : look}}"/>
+  </view>
+  <!-- <block wx:for="{{tipsList}}" wx:key="index"> -->
+    <view class="row" wx:for="{{tipsList}}" wx:for-index="idx" wx:key="idx">
+      <view data-sym="{{item[0].sym ? item[0].sym : ''}}" class="nor {{item[0].class}}" bindtap="{{item[0].type}}">{{item[0].value}}</view>
+      <view data-sym="{{item[1].sym ? item[1].sym : ''}}" class="nor {{item[1].class}}" bindtap="{{item[1].type}}">{{item[1].value}}</view>
+      <view data-sym="{{item[2].sym ? item[2].sym : ''}}" class="nor {{item[2].class}}" bindtap="{{item[2].type}}">{{item[2].value}}</view>
+      <view data-sym="{{item[3].sym ? item[3].sym : ''}}" class="nor {{item[3].class}}" bindtap="{{item[3].type}}">{{item[3].value}}</view>
+      <view data-sym="{{item[4].sym ? item[4].sym : ''}}" class="nor {{item[4].class}}" bindtap="{{item[4].type}}">{{item[4].value}}</view>
+    </view>
+  <!-- </block> -->
+</view>
+

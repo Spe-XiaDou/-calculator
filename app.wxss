@@ -8,3 +8,8 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+page {
+  --dropdown-menu-height: 60rpx;
+  --dropdown-menu-box-shadow: 0 0 0 0;
+}

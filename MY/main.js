@@ -154,8 +154,11 @@ function SuffixCal(list) {
         res = num1 * num2;
       } else if (item === "/") {
         res = num1 / num2;
+      } else if (item === "^") {
+        res = Math.pow(num1, num2)
       } else {
-        throw new Error("运算符有误");
+        // throw new Error("运算符有误");
+        return "运算符有误"
       }
       //把res入栈
       stack.push(res + "");
@@ -163,9 +166,12 @@ function SuffixCal(list) {
   }
   return stack.pop();
 }
-
+function factCal(x) {
+  return x < 2 ? 1 : x * factCal(x - 1)
+}
 
 module.exports = {
   calculate,
-  calObj
+  calObj,
+  factCal
 }

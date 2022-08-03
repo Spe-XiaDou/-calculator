@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-standard": "/components/standard/standard",
+    "my-scientific": "/components/scientific/scientific"
+  }
 }

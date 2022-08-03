@@ -2,41 +2,24 @@ import { calObj } from '../MY/main.js'
 // 包含基础的逻辑：十进制下0~9的输入，加减乘除，求值，清空等常用功能。窗口的放大，退出。适用于多种计算器模式。
 module.exports = Behavior({
   data: {
-    /* look当前展示值
-     * cal运算逻辑值
-     * calLook运算逻辑展示值
-     * result要展示的结果值
-     * mini为true则启用迷你窗口模式
-     * mistake是否运算出错
+    /* look：当前展示值
+     * cal：运算逻辑值
+     * calLook：运算逻辑展示值
+     * result：要展示的结果值
+     * mini：为true则启用迷你窗口模式
+     * complete：本次运算是否完成，用于允许/禁止部分操作。
      */
     look: '',
     cal: '',
     calLook: '',
     result: '',
     mini: false,
-    mistake: false
+    complete: false
   },
   methods: {
-    // 放大窗口
-    expand() {
-      this.setData({
-        mini: !this.data.mini
-      })
-    },
-    // 退出小程序
-    exitProgram() {
-      wx.exitMiniProgram({
-        success: function() {
-          console.log('退出成功');
-        },
-        fail: function() {
-          console.log('退出失败');
-        }
-      })
-    },
     // 数字0~9的输入
     num(e) {
-      if (this.data.mistake) {
+      if (this.data.complete) {
         return
       }
       const val = e.target.dataset.sym
@@ -48,7 +31,7 @@ module.exports = Behavior({
     },
     // 简单运算符（加减乘除）的输入
     simSym(e) {
-      if (this.data.mistake) {
+      if (this.data.complete) {
         return
       }
       const val = e.target.dataset.sym
@@ -61,7 +44,7 @@ module.exports = Behavior({
     },
     // 对运算式进行求值
     res(e) {
-      if (this.data.mistake) {
+      if (this.data.complete) {
         return
       }
       let tmpStr = this.data.cal + this.data.look
@@ -76,7 +59,7 @@ module.exports = Behavior({
       if (res == 'NaN') {
         this.setData({
           result: '算式错误',
-          mistake: true,
+          complete: true,
           calLook: ''
         })
       } else {
@@ -95,8 +78,17 @@ module.exports = Behavior({
         calLook: '',
         cal: '',
         result: '',
-        mistake: false
+        complete: false
+      })
+    },
+    // 后退一格
+    back() {
+      // let cal = this.data.cal.slice(0, -1)
+      this.setData({
+        cal: this.data.cal.slice(0, -1),
+        calLook: this.data.calLook.slice(0, -1),
       })
     }
   }
+
 })
