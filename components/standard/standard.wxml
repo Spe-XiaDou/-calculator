@@ -5,6 +5,6 @@
       <input type="text" class="look" placeholder="请输入值" value="{{result ? result : look}}"/>
   </view>
     <view class="row" wx:for="{{tipsList}}" wx:for-index="idx" wx:key="idx">
-      <view wx:for="{{ item }}" wx:for-item="i" data-sym="{{i.sym ? i.sym : ''}}" class="nor {{i.class}}" bindtap="{{i.type}}">{{i.value}}</view>
+      <view wx:for="{{ item }}" wx:for-item="i" wx:key="index" data-sym="{{i.sym ? i.sym : ''}}" class="nor {{i.class}}" bindtap="{{i.type}}">{{i.value}}</view>
     </view>
 </view>
