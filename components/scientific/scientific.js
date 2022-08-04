@@ -119,8 +119,8 @@ Component({
         "0": {
           "value": "10ˣ",
           "class": "",
-          "type": "sqrt",
-          "sym": "/"
+          "type": "pow10",
+          "sym": ""
         },
         "1": {
           "value": "4",
@@ -265,9 +265,14 @@ Component({
         })
       }
       let res = factCal(val)
-
       this.setData({
         result: res
+      })
+    },
+    pow10() {
+      let tmpLook = Math.pow(10, this.data.look)
+      this.setData({
+        look: Math.pow(10, this.data.look)
       })
     }
   }
