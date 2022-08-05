@@ -80,7 +80,7 @@ function infixToArr(infixExpression) {
       str = ""; //先将str置为""
       while (
         i < infixExpression.length &&
-        (c = infixExpression.substring(i, i + 1)).match(/\d+/)
+        ((c = infixExpression.substring(i, i + 1)).match(/\d+/) || (c = infixExpression.substring(i, i + 1)).match(/\./))
       ) {
         str += c; //拼接
         i++;
@@ -143,8 +143,8 @@ function SuffixCal(list) {
       stack.push(item);
     } else {
       //pop出两个数，并运算，再入栈
-      let num2 = parseInt(stack.pop());
-      let num1 = parseInt(stack.pop());
+      let num2 = parseFloat(stack.pop());
+      let num1 = parseFloat(stack.pop());
       let res = 0;
       if (item === "+") {
         res = num1 + num2;

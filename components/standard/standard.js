@@ -20,22 +20,22 @@ Component({
        */
       {
         "0": {
-          "value": "",
-          "class": "",
-          "type": "clear",
-          "sym": ""
-        },
-        "1": {
           "value": "x²",
           "class": "",
           "type": "square",
           "sym": ""
         },
-        "2": {
+        "1": {
           "value": "²√x",
           "class": "",
           "type": "sqrt",
-          "sym": "/"
+          "sym": ""
+        },
+        "2": {
+          "value": "C",
+          "class": "",
+          "type": "clear",
+          "sym": ""
         },
         "3": {
           "value": "后退",
@@ -124,10 +124,10 @@ Component({
       },
       {
         "0": {
-          "value": "C",
-          "class": "",
-          "type": "clear",
-          "sym": ""
+          "value": ".",
+          "class": "num",
+          "type": "num",
+          "sym": "."
         },
         "1": {
           "value": "0",

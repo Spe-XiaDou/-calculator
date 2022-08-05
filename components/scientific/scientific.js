@@ -77,9 +77,9 @@ Component({
           "sym": ""
         },
         "4": {
-          "value": "",
+          "value": "C",
           "class": "",
-          "type": "",
+          "type": "clear",
           "sym": ""
         },
       },
@@ -187,10 +187,10 @@ Component({
           "sym": "/"
         },
         "1": {
-          "value": "C",
-          "class": "",
-          "type": "clear",
-          "sym": ""
+          "value": ".",
+          "class": "num",
+          "type": "num",
+          "sym": "."
         },
         "2": {
           "value": "1",
